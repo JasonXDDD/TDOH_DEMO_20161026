@@ -1,0 +1,16 @@
+<input type="button" value="DELETE" (click)="selete_item(item.$key, 'delete')">
+<input type="button" value="UPDATE" (click)="selete_item(item.$key, 'update')">
+<input type="button" value="SET" (click)="selete_item(item.$key, 'set')">
+
+<div class="post-preview">
+	<a [href]="item.link">
+		<h2 class="post-title">
+      {{ item.name }}
+		</h2>
+		<h3 class="post-subtitle">
+			{{ item.content }}
+		</h3>
+	</a>
+	<p class="post-meta">Posted by <a href="#">{{ item.author }}</a> on {{ item.date }}</p>
+</div>
+<hr>

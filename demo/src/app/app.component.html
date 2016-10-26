@@ -1,0 +1,146 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+			<a class="navbar-brand" href="index.html">成神之路XD</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/">About</a>
+				</li>
+				<li>
+					<a href="/">GitHub</a>
+				</li>
+				<li>
+					<a href="/">Contact</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container -->
+</nav>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('assets/img/home-bg.jpg')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading">
+					<h1>成神之路</h1>
+					<hr class="small">
+					<span class="subheading">我是人，因為有夢，才要成神。</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <!--Add Form-->
+      <div class="post-preview">
+				<form #myform="ngForm">
+					<h2 class="post-title">
+						Name: <input type="text" name="name" ngModel required>
+					</h2>
+					<h3 class="post-subtitle">
+						Content: <input type="text" name="content" ngModel required>
+					</h3>
+					<p class="post-meta">
+						Author: <input type="text" name="author" ngModel> on Date: <input type="text" name="date" ngModel>
+					</p>
+					<input type="button" value="Submit" (click)="add(myform.value)">
+				</form>
+			</div>
+			<hr>
+
+      <!--Show Data-->
+      <div>
+        <pre>
+          {{ myform.value | json }}
+        </pre>
+      </div>
+
+      <!--Page Started-->
+      <!--<app-article [item]="item" *ngFor="let item of articles"></app-article>-->
+      <app-article [item]="item" (seleteKey)="choose($event)" *ngFor="let item of datas | async"></app-article>
+			<!-- Pager -->
+
+      <!--Show Data-->
+      <div>
+        <pre>
+          {{ datas | async | json }}
+        </pre>
+      </div>
+
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer style="background-color: #333333;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					<li>
+						<a href="#">
+							<span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitch fa-stack-1x fa-inverse"></i>
+                                </span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+						</a>
+					</li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; JasonXDDD Website 2016</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- jQuery -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="assets/js/jqBootstrapValidation.js"></script>
+<script src="assets/js/contact_me.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="assets/js/clean-blog.min.js"></script>

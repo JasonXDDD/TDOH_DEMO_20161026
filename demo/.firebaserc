@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "tdoh-demo",
+    "tdoh": "tdoh-demo"
+  }
+}
