@@ -88,7 +88,7 @@ export const firebaseConfig = {
 ```bash
 	$firebase login
 	$firebase init
-	$firebase use -add
+	$firebase use --add
 	$firebase deploy
 ```
 
