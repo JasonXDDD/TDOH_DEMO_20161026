@@ -1,4 +1,4 @@
-#TDOH -DEMO
+#TDOH - DEMO
 2016/10/26 TDOH DEMO
 **framework: Angular2 + FireBase**
 
